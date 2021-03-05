@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>Blueprints</title>
     <meta charset="UTF-8">
@@ -10,36 +11,33 @@
     <script src="js/apimock.js"></script>
     <script src="js/app.js"></script>
 
-    <link rel="stylesheet" href="/webjars/bootstrap/4.1.2/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="/webjars/bootstrap/4.1.2/css/bootstrap.min.css" />
 </head>
 
 <body>
-<div>
     <h2>Blueprints</h2>
-</div>
-<form>
     <h3> Author</h3>
-    <input>
-    <button>Get blueprints</button>
-</form>
+    <input id="author-name">
+    <button onclick="app.getBlueprints($('#author-name').val());">Get blueprints</button>
 
-<div class="container">
-    <div class="row">
-        <div class="col">
-            <h2>JohnConnor's blueprints</h2>
-            <table>
-                <tr>
-                    <th>Blueprint name</th>
-                    <th>Number of points</th>
-                    <th>Open Blueprint</th>
-                </tr>
-            </table>
-            <p>Total user points:</p>
-        </div>
-        <div class="col">
-            <h2>Current blueprint: house</h2>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2 id="table-title">Blueprints</h2>
+                <table id="bp-table">
+                    <tr>
+                        <th>Blueprint name</th>
+                        <th>Number of points</th>
+                        <th>Open Blueprint</th>
+                    </tr>
+                </table>
+                <p id="total-points">Total user points</p>
+            </div>
+            <div class="col">
+                <h2 id="current-bp-text">Current blueprint</h2>
+            </div>
         </div>
     </div>
-</div>
 </body>
+
 </html>
