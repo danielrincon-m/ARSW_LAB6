@@ -1,8 +1,8 @@
 
 ### Escuela Colombiana de Ingeniería
 > Integrantes:
-> Paula Andrea Guevara Sanchez.
-> Daniel Felipe Muñoz Rincón.
+	> Paula Andrea Guevara Sanchez.
+	> Daniel Felipe Muñoz Rincón.
 ### Arquiecturas de Software
 
 ## Construción de un cliente 'grueso' con un API REST, HTML5, Javascript y CSS3. Parte I.
