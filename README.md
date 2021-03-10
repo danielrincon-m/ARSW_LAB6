@@ -40,11 +40,11 @@
     ```
     src/main/resources/static
     ```
-![](https://github.com/danielrincon-m/ARSW_LAB6/blob/master/img/II-1.png)
+> ![](https://github.com/danielrincon-m/ARSW_LAB6/blob/master/img/II-1.png)
 
 4. Cree, en el directorio anterior, la página index.html, sólo con lo básico: título, campo para la captura del autor, botón de 'Get blueprints', campo donde se mostrará el nombre del autor seleccionado, [la tabla HTML](https://www.w3schools.com/html/html_tables.asp) donde se mostrará el listado de planos (con sólo los encabezados), y un campo en donde se mostrará el total de puntos de los planos del autor. Recuerde asociarle identificadores a dichos componentes para facilitar su búsqueda mediante selectores.
 
-![](https://github.com/danielrincon-m/ARSW_LAB6/blob/master/img/II-2.png)
+> ![](https://github.com/danielrincon-m/ARSW_LAB6/blob/master/img/II-2.png)
 
 5. En el elemento \<head\> de la página, agregue las referencia a las librerías de jQuery, Bootstrap y a la hoja de estilos de Bootstrap. 
     ```html
@@ -59,7 +59,7 @@
           href="/webjars/bootstrap/4.1.2/css/bootstrap.min.css" />
     ```
 
-![](https://github.com/danielrincon-m/ARSW_LAB6/blob/master/img/II-3.png)
+> ![](https://github.com/danielrincon-m/ARSW_LAB6/blob/master/img/II-3.png)
 
 * Suba la aplicación (mvn spring-boot:run), y rectifique:
     1. Que la página sea accesible desde:
@@ -68,7 +68,7 @@
     ```
     2. Al abrir la consola de desarrollador del navegador, NO deben aparecer mensajes de error 404 (es decir, que las librerías de JavaScript se cargaron correctamente).
 
-    ![](https://github.com/danielrincon-m/ARSW_LAB6/blob/master/img/II-4-ii.png)
+    > ![](https://github.com/danielrincon-m/ARSW_LAB6/blob/master/img/II-4-ii.png)
     
 ---
 
@@ -83,7 +83,7 @@
     <script src="js/apimock.js"></script>
     <script src="js/app.js"></script>
     ```
-![](https://github.com/danielrincon-m/ARSW_LAB6/blob/master/img/III-3.png)
+> ![](https://github.com/danielrincon-m/ARSW_LAB6/blob/master/img/III-3.png)
 
 3. Haga que el módulo antes creado mantenga de forma privada:
     * El nombre del autor seleccionado.
@@ -100,15 +100,15 @@
 
     * Sobre cualquiera de los dos listados (el original, o el transformado mediante 'map'), aplique un 'reduce' que calcule el número de puntos. Con este valor, use jQuery para actualizar el campo correspondiente dentro del DOM.
 
-![](https://github.com/danielrincon-m/ARSW_LAB6/blob/master/img/III-5-1.png)
+> ![](https://github.com/danielrincon-m/ARSW_LAB6/blob/master/img/III-5-1.png)
 
 5. Asocie la operación antes creada (la de app.js) al evento 'on-click' del botón de consulta de la página.
 
-![](https://github.com/danielrincon-m/ARSW_LAB6/blob/master/img/III-5-2.png)
+> ![](https://github.com/danielrincon-m/ARSW_LAB6/blob/master/img/III-5-2.png)
 
 6. Verifique el funcionamiento de la aplicación. Inicie el servidor, abra la aplicación HTML5/JavaScript, y rectifique que al ingresar un usuario existente, se cargue el listado del mismo.
 
-![](https://github.com/danielrincon-m/ARSW_LAB6/blob/master/img/III-7.png)
+> ![](https://github.com/danielrincon-m/ARSW_LAB6/blob/master/img/III-7.png)
 
 ---
 
@@ -116,27 +116,27 @@
 
 8. A la página, agregue un [elemento de tipo Canvas](https://www.w3schools.com/html/html5_canvas.asp), con su respectivo identificador. Haga que sus dimensiones no sean demasiado grandes para dejar espacio para los otros componentes, pero lo suficiente para poder 'dibujar' los planos.
 
-![](https://github.com/danielrincon-m/ARSW_LAB6/blob/master/img/IIII-8-1.png)
+> ![](https://github.com/danielrincon-m/ARSW_LAB6/blob/master/img/IIII-8-1.png)
 
 9. Al módulo app.js agregue una operación que, dado el nombre de un autor, y el nombre de uno de sus planos dados como parámetros, haciendo uso del método getBlueprintsByNameAndAuthor de apimock.js y de una función _callback_:
     * Consulte los puntos del plano correspondiente, y con los mismos dibuje consectivamente segmentos de recta, haciendo uso [de los elementos HTML5 (Canvas, 2DContext, etc) disponibles](https://www.w3schools.com/html/tryit.asp?filename=tryhtml5_canvas_tut_path)* Actualice con jQuery el campo <div> donde se muestra el nombre del plano que se está dibujando (si dicho campo no existe, agruéguelo al DOM).
 
-![](https://github.com/danielrincon-m/ARSW_LAB6/blob/master/img/IIII-9.png)
+> ![](https://github.com/danielrincon-m/ARSW_LAB6/blob/master/img/IIII-9.png)
 
 10. Verifique que la aplicación ahora, además de mostrar el listado de los planos de un autor, permita seleccionar uno de éstos y graficarlo. Para esto, haga que en las filas generadas para el punto 5 incluyan en la última columna un botón con su evento de clic asociado a la operación hecha anteriormente (enviándo como parámetro los nombres correspondientes).
 
-![](https://github.com/danielrincon-m/ARSW_LAB6/blob/master/img/IIII-10.png)
+> ![](https://github.com/danielrincon-m/ARSW_LAB6/blob/master/img/IIII-10.png)
 
 11. Verifique que la aplicación ahora permita: consultar los planos de un auto y graficar aquel que se seleccione.
 
 12. Una vez funcione la aplicación (sólo front-end), haga un módulo (llámelo 'apiclient') que tenga las mismas operaciones del 'apimock', pero que para las mismas use datos reales consultados del API REST. Para lo anterior revise [cómo hacer peticiones GET con jQuery](https://api.jquery.com/jquery.get/), y cómo se maneja el esquema de _callbacks_ en este contexto.
 
-![](https://github.com/danielrincon-m/ARSW_LAB6/blob/master/img/IIII-12.png)
+> ![](https://github.com/danielrincon-m/ARSW_LAB6/blob/master/img/IIII-12.png)
 
 13. Modifique el código de app.js de manera que sea posible cambiar entre el 'apimock' y el 'apiclient' con sólo una línea de código.
 
-![](https://github.com/danielrincon-m/ARSW_LAB6/blob/master/img/IIII-13.png)
+> ![](https://github.com/danielrincon-m/ARSW_LAB6/blob/master/img/IIII-13.png)
 
 14. Revise la [documentación y ejemplos de los estilos de Bootstrap](https://v4-alpha.getbootstrap.com/examples/) (ya incluidos en el ejercicio), agregue los elementos necesarios a la página para que sea más vistosa, y más cercana al mock dado al inicio del enunciado.
 
-![](https://github.com/danielrincon-m/ARSW_LAB6/blob/master/img/IIII-14.png)
+> ![](https://github.com/danielrincon-m/ARSW_LAB6/blob/master/img/IIII-14.png)
