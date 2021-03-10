@@ -29,7 +29,7 @@
         compile group: 'org.webjars', name: 'jquery', version: '3.1.0'
     }               
     ```
-![](https://github.com/danielrincon-m/ARSW_LAB6/blob/master/img/I-1.png)
+> ![](https://github.com/danielrincon-m/ARSW_LAB6/blob/master/img/I-1.png)
 
 ---
 
