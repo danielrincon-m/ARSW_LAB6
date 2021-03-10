@@ -4,12 +4,36 @@ var app = (function () {
     let blueprints;
     let totalPoints;
 
+    let api = apimock;
+
+    let drawBlueprint = function (author, bpname) {
+        api.getBlueprintsByNameAndAuthor(bpname, author, function (err, res) {
+            //Obtener los puntos
+            console.log(res);
+            let points = res.points;
+            //Dibujar los puntos
+            let canvas = $("#canvas")[0];
+            let ctx = canvas.getContext("2d");
+
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            ctx.beginPath();
+            ctx.moveTo(points[0].x, points[0].y);
+            for (let i = 1; i < points.length; i++) {
+                ctx.lineTo(points[i].x, points[i].y);
+                ctx.moveTo(points[i].x, points[i].y);
+            }
+            ctx.stroke();
+
+            $("#current-bp-text").html("Current blueprint: " + bpname);
+        });
+    };
+
     let getBlueprints = function (author) {
         authorName = author;
         totalPoints = 0;
         blueprints = [];
 
-        apimock.getBlueprintsByAuthor(author, function (err, res) {
+        api.getBlueprintsByAuthor(author, function (err, res) {
             getBlueprintsInfo(res);
             createTable();
         });
@@ -36,7 +60,8 @@ var app = (function () {
             html += "<tr>";
             html += "<td>" + bp.name + "</td>";
             html += "<td>" + bp.nPoints + "</td>";
-            html += "<td></td>"; //Button
+            html += "<td><button type='button' onclick='app.drawBlueprint(\"" +
+                authorName + "\",\"" + bp.name + "\");'>Draw</button></td>";
             html += "</tr>";
         });
         $("#table-title").html(authorName + "'s blueprints");
@@ -54,6 +79,7 @@ var app = (function () {
     };
 
     return {
+        drawBlueprint: drawBlueprint,
         getBlueprints: getBlueprints,
         openBlueprint: openBlueprint,
         changeAuthorName: changeAuthorName,
