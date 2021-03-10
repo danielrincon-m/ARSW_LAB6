@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Blueprints</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <script src="/webjars/jquery/3.1.0/jquery.min.js"></script>
+    <script src="/webjars/bootstrap/4.1.2/js/bootstrap.min.js"></script>
+    <script src="js/apimock.js"></script>
+    <script src="js/apiclient.js"></script>
+    <script src="js/app.js"></script>
+
+    <link rel="stylesheet" href="/webjars/bootstrap/4.1.2/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <h2>Blueprints</h2>
+    <h3> Author</h3>
+    <input id="author-name">
+    <button onclick="app.getBlueprints($('#author-name').val());">Get blueprints</button>
+
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <h2 id="table-title">Blueprints</h2>
+                <table id="bp-table">
+                    <tr>
+                        <th>Blueprint name</th>
+                        <th>Number of points</th>
+                        <th>Open Blueprint</th>
+                    </tr>
+                </table>
+                <p id="total-points">Total user points</p>
+            </div>
+            <div class="col">
+                <h2 id="current-bp-text">Current blueprint</h2>
+                <canvas id="canvas" width="500px" height="300px"></canvas>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

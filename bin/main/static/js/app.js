@@ -5,7 +5,6 @@ var app = (function () {
     let totalPoints;
 
     let api = apimock;
-    // let api = apiclient;
 
     let drawBlueprint = function (author, bpname) {
         api.getBlueprintsByNameAndAuthor(bpname, author, function (err, res) {
@@ -52,13 +51,17 @@ var app = (function () {
     };
 
     let createTable = function () {
-        let html = "";
+        let html = "<tr>" +
+            "<th>Blueprint name</th>" +
+            "<th>Number of points</th>" +
+            "<th>Open Blueprint</th>" +
+            "</tr>";
         blueprints.forEach(bp => {
             html += "<tr>";
             html += "<td>" + bp.name + "</td>";
             html += "<td>" + bp.nPoints + "</td>";
-            html += "<td><button class='btn btn-secondary' type='button' onclick='app.drawBlueprint(\"" +
-                authorName + "\",\"" + bp.name + "\");'>Open</button></td>";
+            html += "<td><button type='button' onclick='app.drawBlueprint(\"" +
+                authorName + "\",\"" + bp.name + "\");'>Draw</button></td>";
             html += "</tr>";
         });
         $("#table-title").html(authorName + "'s blueprints");
