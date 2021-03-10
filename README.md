@@ -1,7 +1,7 @@
 
 ### Escuela Colombiana de Ingeniería
 > Integrantes:
-> * Paula Andrea Guevara Sanchez.
+> * Paula Andrea Guevara Sánchez.
 > * Daniel Felipe Muñoz Rincón.
 ### Arquiecturas de Software
 
