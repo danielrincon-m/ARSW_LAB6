@@ -45,6 +45,7 @@
 4. Cree, en el directorio anterior, la página index.html, sólo con lo básico: título, campo para la captura del autor, botón de 'Get blueprints', campo donde se mostrará el nombre del autor seleccionado, [la tabla HTML](https://www.w3schools.com/html/html_tables.asp) donde se mostrará el listado de planos (con sólo los encabezados), y un campo en donde se mostrará el total de puntos de los planos del autor. Recuerde asociarle identificadores a dichos componentes para facilitar su búsqueda mediante selectores.
 
 ![](https://github.com/danielrincon-m/ARSW_LAB6/blob/master/img/II-2.png)
+
 5. En el elemento \<head\> de la página, agregue las referencia a las librerías de jQuery, Bootstrap y a la hoja de estilos de Bootstrap. 
     ```html
     <head>
@@ -60,7 +61,7 @@
 
 ![](https://github.com/danielrincon-m/ARSW_LAB6/blob/master/img/II-3.png)
 
-5. Suba la aplicación (mvn spring-boot:run), y rectifique:
+* Suba la aplicación (mvn spring-boot:run), y rectifique:
     1. Que la página sea accesible desde:
     ```
     http://localhost:8080/index.html
@@ -68,6 +69,7 @@
     2. Al abrir la consola de desarrollador del navegador, NO deben aparecer mensajes de error 404 (es decir, que las librerías de JavaScript se cargaron correctamente).
 
     ![](https://github.com/danielrincon-m/ARSW_LAB6/blob/master/img/II-4-ii.png)
+    
 ---
 
 ## Front-End - Lógica
@@ -82,6 +84,7 @@
     <script src="js/app.js"></script>
     ```
 ![](https://github.com/danielrincon-m/ARSW_LAB6/blob/master/img/III-3.png)
+
 3. Haga que el módulo antes creado mantenga de forma privada:
     * El nombre del autor seleccionado.
     * El listado de nombre y tamaño de los planos del autor seleccionado. Es decir, una lista objetos, donde cada objeto tendrá dos propiedades: nombre de plano, y número de puntos del plano.
@@ -106,6 +109,8 @@
 6. Verifique el funcionamiento de la aplicación. Inicie el servidor, abra la aplicación HTML5/JavaScript, y rectifique que al ingresar un usuario existente, se cargue el listado del mismo.
 
 ![](https://github.com/danielrincon-m/ARSW_LAB6/blob/master/img/III-7.png)
+
+---
 
 ## Para la próxima semana
 
